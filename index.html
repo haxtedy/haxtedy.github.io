@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-python构造函数的坑" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-less" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/08/01/python构造函数的坑/" class="article-date">
-  <time datetime="2019-08-01T07:48:05.000Z" itemprop="datePublished">2019-08-01</time>
+    <a href="/2019/08/11/less/" class="article-date">
+  <time datetime="2019-08-11T09:46:27.000Z" itemprop="datePublished">2019-08-11</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/01/python构造函数的坑/">python构造函数的坑</a>
+      <a class="article-title" href="/2019/08/11/less/">less</a>
     </h1>
   
 
@@ -86,16 +86,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, tools=[])</span>:</span></span><br><span class="line">        <span class="comment">#这种写法是错误的，因为只会生成一个初始的数组，导致stu1和stu2这种默认赋值的tools都指向同一个地址。</span></span><br><span class="line">        self.tools = tools</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_tool</span><span class="params">(self,value)</span>:</span></span><br><span class="line">        self.tools.append(value)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    stu1 = Student()</span><br><span class="line">    stu2 = Student()</span><br><span class="line">    stu3 = Student([<span class="string">'toycar'</span>])</span><br><span class="line">    stu1.add_tool(<span class="string">'bear'</span>)</span><br><span class="line">    print(stu2.tools)<span class="comment">#['bear']，stu1和stu2的tools实际指向了同一个地址。</span></span><br><span class="line">    print(stu3.tools)<span class="comment">#['toycar']，stu3是自己赋值的，所以地址不同。</span></span><br></pre></td></tr></table></figure>
-
+        <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><code>@name: value</code>.</p>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>会先从变量所在的作用域中查找变量，再到父级作用域。变量可以覆盖。</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
+<li>作为属性值，直接使用<code>@name</code>即可。</li>
+<li>在选择器名称，属性名，URLs以及<code>@import</code>语句中，使用<code>@{name}</code>。</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://haxtedy.github.io/2019/08/01/python构造函数的坑/" data-id="cjysefckr000ad0uyslyimmj0" class="article-share-link">Share</a>
+      <a data-url="https://haxtedy.github.io/2019/08/11/less/" data-id="cjz7rjs8h000140uyg2l8sxzg" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
 
     </footer>
   </div>
@@ -108,7 +112,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -122,7 +126,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/career/">career</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/career/">career</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端综合知识点/">前端综合知识点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li></ul>
     </div>
   </div>
 
@@ -132,7 +136,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/career/" style="font-size: 10px;">career</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a>
+      <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/career/" style="font-size: 10px;">career</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/前端综合知识点/" style="font-size: 10px;">前端综合知识点</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a>
     </div>
   </div>
 
@@ -154,23 +158,23 @@
       <ul>
         
           <li>
+            <a href="/2019/08/11/less/">less</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/07/linux-command/">linux_command</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/05/前端seo/">前端seo</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/01/python构造函数的坑/">python构造函数的坑</a>
           </li>
         
           <li>
             <a href="/2019/07/30/一些html概念的理解/">一些html概念的理解</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/30/前端的一些面试点/">前端的一些面试点</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/29/HTTP-CDN/">HTTP_CDN</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/22/markdown-use/">markdown_use</a>
           </li>
         
       </ul>
