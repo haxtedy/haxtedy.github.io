@@ -5,15 +5,22 @@
   
 
   
-  <title>haxtedy</title>
+  <title>pt_px | haxtedy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="haxtedy">
-<meta property="og:url" content="https://haxtedy.github.io/page/5/index.html">
+  <meta name="description" content="一些基本知识 pt：逻辑像素或逻辑分辨率。我们用浏览器控制台调试移动端时，上面标的就是逻辑像素。  px：物理像素或物理分辨率。不能看做是一个长度单位，而是一个点。 pt与px的转换公式：pt = px * 3/4  ppi：pixels per inch像素密度，像素每英寸，也可以说是分辨率。分辨率可以有其他不同的表示单位，比如dpi（点每英寸）、lpi（线每英寸）、ppi（像素每英寸）和PPD">
+<meta name="keywords" content="移动端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pt_px">
+<meta property="og:url" content="https://haxtedy.github.io/2019/08/12/pt-px/index.html">
 <meta property="og:site_name" content="haxtedy">
+<meta property="og:description" content="一些基本知识 pt：逻辑像素或逻辑分辨率。我们用浏览器控制台调试移动端时，上面标的就是逻辑像素。  px：物理像素或物理分辨率。不能看做是一个长度单位，而是一个点。 pt与px的转换公式：pt = px * 3/4  ppi：pixels per inch像素密度，像素每英寸，也可以说是分辨率。分辨率可以有其他不同的表示单位，比如dpi（点每英寸）、lpi（线每英寸）、ppi（像素每英寸）和PPD">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://haxtedy.github.io/img/手机英寸.jpg">
+<meta property="og:updated_time" content="2019-09-10T03:38:07.913Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="haxtedy">
+<meta name="twitter:title" content="pt_px">
+<meta name="twitter:description" content="一些基本知识 pt：逻辑像素或逻辑分辨率。我们用浏览器控制台调试移动端时，上面标的就是逻辑像素。  px：物理像素或物理分辨率。不能看做是一个长度单位，而是一个点。 pt与px的转换公式：pt = px * 3/4  ppi：pixels per inch像素密度，像素每英寸，也可以说是分辨率。分辨率可以有其他不同的表示单位，比如dpi（点每英寸）、lpi（线每英寸）、ppi（像素每英寸）和PPD">
+<meta name="twitter:image" content="https://haxtedy.github.io/img/手机英寸.jpg">
   
     <link rel="alternate" href="/atom.xml" title="haxtedy" type="application/atom+xml">
   
@@ -62,12 +69,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-python构造函数的坑" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-pt-px" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/08/01/python构造函数的坑/" class="article-date">
-  <time datetime="2019-08-01T07:48:05.000Z" itemprop="datePublished">2019-08-01</time>
+    <a href="/2019/08/12/pt-px/" class="article-date">
+  <time datetime="2019-08-12T08:21:35.000Z" itemprop="datePublished">2019-08-12</time>
 </a>
     
   </div>
@@ -77,8 +82,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/01/python构造函数的坑/">python构造函数的坑</a>
+    <h1 class="article-title" itemprop="name">
+      pt_px
     </h1>
   
 
@@ -86,69 +91,86 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, tools=[])</span>:</span></span><br><span class="line">        <span class="comment">#这种写法是错误的，因为只会生成一个初始的数组，导致stu1和stu2这种默认赋值的tools都指向同一个地址。</span></span><br><span class="line">        self.tools = tools</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_tool</span><span class="params">(self,value)</span>:</span></span><br><span class="line">        self.tools.append(value)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    stu1 = Student()</span><br><span class="line">    stu2 = Student()</span><br><span class="line">    stu3 = Student([<span class="string">'toycar'</span>])</span><br><span class="line">    stu1.add_tool(<span class="string">'bear'</span>)</span><br><span class="line">    print(stu2.tools)<span class="comment">#['bear']，stu1和stu2的tools实际指向了同一个地址。</span></span><br><span class="line">    print(stu3.tools)<span class="comment">#['toycar']，stu3是自己赋值的，所以地址不同。</span></span><br></pre></td></tr></table></figure>
+        <h3 id="一些基本知识"><a href="#一些基本知识" class="headerlink" title="一些基本知识"></a>一些基本知识</h3><ul>
+<li><p>pt：逻辑像素或逻辑分辨率。我们用浏览器控制台调试移动端时，上面标的就是逻辑像素。</p>
+</li>
+<li><p>px：物理像素或物理分辨率。不能看做是一个长度单位，而是一个点。</p>
+<p>pt与px的转换公式：pt = px * 3/4</p>
+</li>
+<li><p>ppi：pixels per inch像素密度，像素每英寸，也可以说是分辨率。分辨率可以有其他不同的表示单位，比如dpi（点每英寸）、lpi（线每英寸）、ppi（像素每英寸）和PPD（PPPixels Per Degree 角分辨率，像素每度）。</p>
+</li>
+<li><p>显示分辨率：也称为屏幕分辨率，是指显示器所能显示的像素有多少。</p>
+</li>
+<li><p>设备像素比：devicePixelRatio，是物理分辨率和逻辑分辨率的比值。</p>
+<blockquote>
+<p>devicePixelRatio = 物理分辨率 / 逻辑分辨率</p>
+</blockquote>
+</li>
+<li><p>屏幕尺寸：对角线的长度，单位是英寸。这个就是平时我们所说的手机是多少寸。但要注意，这个只是指屏幕可见的部分，如下图。</p>
+</li>
+</ul>
+<img src="/img/手机英寸.jpg" width="50%/">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://haxtedy.github.io/2019/08/01/python构造函数的坑/" data-id="ck0euqezz000lv8ma0y2405zo" class="article-share-link">Share</a>
+      <a data-url="https://haxtedy.github.io/2019/08/12/pt-px/" data-id="ck0euqezk000av8madnnhx0cx" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
 
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-一些html概念的理解" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/30/一些html概念的理解/" class="article-date">
-  <time datetime="2019-07-30T01:20:58.000Z" itemprop="datePublished">2019-07-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2019/08/19/TCP-IP/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          TCP-IP
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/30/一些html概念的理解/">一些html概念的理解</a>
-    </h1>
   
+    <a href="/2019/08/11/less/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">less</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-元素的高度和元素的内容高度"><a href="#1-元素的高度和元素的内容高度" class="headerlink" title="1.元素的高度和元素的内容高度"></a>1.元素的高度和元素的内容高度</h4><p>高度不能真实表达元素实质容纳内容的高度。因为元素的内容高度可能超过元素的高度，此时，有一部分内容处于不可见状态，比如出现垂直滚动条。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://haxtedy.github.io/2019/07/30/一些html概念的理解/" data-id="ck0euqezr000ev8mah3wkefja" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
-  </nav>
 
 </section>
         

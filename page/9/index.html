@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="haxtedy">
-<meta property="og:url" content="https://haxtedy.github.io/page/5/index.html">
+<meta property="og:url" content="https://haxtedy.github.io/page/9/index.html">
 <meta property="og:site_name" content="haxtedy">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-python构造函数的坑" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-n-file" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/08/01/python构造函数的坑/" class="article-date">
-  <time datetime="2019-08-01T07:48:05.000Z" itemprop="datePublished">2019-08-01</time>
+    <a href="/2019/07/20/n-file/" class="article-date">
+  <time datetime="2019-07-20T07:45:35.000Z" itemprop="datePublished">2019-07-20</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/01/python构造函数的坑/">python构造函数的坑</a>
+      <a class="article-title" href="/2019/07/20/n-file/">n_file</a>
     </h1>
   
 
@@ -86,16 +86,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, tools=[])</span>:</span></span><br><span class="line">        <span class="comment">#这种写法是错误的，因为只会生成一个初始的数组，导致stu1和stu2这种默认赋值的tools都指向同一个地址。</span></span><br><span class="line">        self.tools = tools</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_tool</span><span class="params">(self,value)</span>:</span></span><br><span class="line">        self.tools.append(value)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    stu1 = Student()</span><br><span class="line">    stu2 = Student()</span><br><span class="line">    stu3 = Student([<span class="string">'toycar'</span>])</span><br><span class="line">    stu1.add_tool(<span class="string">'bear'</span>)</span><br><span class="line">    print(stu2.tools)<span class="comment">#['bear']，stu1和stu2的tools实际指向了同一个地址。</span></span><br><span class="line">    print(stu3.tools)<span class="comment">#['toycar']，stu3是自己赋值的，所以地址不同。</span></span><br></pre></td></tr></table></figure>
-
-
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://haxtedy.github.io/2019/08/01/python构造函数的坑/" data-id="ck0euqezz000lv8ma0y2405zo" class="article-share-link">Share</a>
+      <a data-url="https://haxtedy.github.io/2019/07/20/n-file/" data-id="ck0euqezg0006v8maclljo8sx" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
 
     </footer>
   </div>
@@ -104,10 +102,10 @@
 
 
   
-    <article id="post-一些html概念的理解" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-JS作用域" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/30/一些html概念的理解/" class="article-date">
-  <time datetime="2019-07-30T01:20:58.000Z" itemprop="datePublished">2019-07-30</time>
+    <a href="/2019/07/19/JS作用域/" class="article-date">
+  <time datetime="2019-07-19T08:44:16.000Z" itemprop="datePublished">2019-07-19</time>
 </a>
     
   </div>
@@ -118,7 +116,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/30/一些html概念的理解/">一些html概念的理解</a>
+      <a class="article-title" href="/2019/07/19/JS作用域/">JS作用域</a>
     </h1>
   
 
@@ -126,15 +124,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-元素的高度和元素的内容高度"><a href="#1-元素的高度和元素的内容高度" class="headerlink" title="1.元素的高度和元素的内容高度"></a>1.元素的高度和元素的内容高度</h4><p>高度不能真实表达元素实质容纳内容的高度。因为元素的内容高度可能超过元素的高度，此时，有一部分内容处于不可见状态，比如出现垂直滚动条。</p>
+        <p><em>js中的作用域分为<strong>全局作用域</strong>和<strong>局部作用域(方法作用域)</strong>。在ES6中新增了<strong>块级作用域</strong>。</em></p>
+<hr>
+<h2 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h2><p><strong>var</strong>定义的变量属于<strong>局部作用域</strong>，所以在 <code>if</code> 或是 <code>for</code> 这样逻辑语句中使用<strong>var</strong>定义的变量，都是可以在其所属的作用域中访问的。以下代码，<code>a</code>和<code>b</code>实际上都是定义在全局作用域中，此处var的范围扩展到了全局。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 输出1</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="局部作用域"><a href="#局部作用域" class="headerlink" title="局部作用域"></a>局部作用域</h2><p>局部作用域也可以称之为函数作用域、方法作用域。</p>
+<ul>
+<li><p>局部作用域中定义的变量，只供局部作用域调用，外界无法访问。</p>
+</li>
+<li><p>在局部作用域中，可以访问其父级作用域中的变量（不包括父级的this和arguments）。这里涉及了<strong>作用域链</strong>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'a'</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);<span class="comment">//a</span></span><br><span class="line">    <span class="keyword">var</span> b = <span class="string">'b'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(b);<span class="comment">//b</span></span><br><span class="line">&#125;)();</span><br><span class="line"><span class="built_in">console</span>.log(b);<span class="comment">//ReferenceError: b is not defined</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><p>块作用域由 { } 包括，if语句和for语句里面的{ }也属于块作用域。<strong>let</strong>和<strong>const</strong>定义的变量属于块级作用域。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://haxtedy.github.io/2019/07/30/一些html概念的理解/" data-id="ck0euqezr000ev8mah3wkefja" class="article-share-link">Share</a>
+      <a data-url="https://haxtedy.github.io/2019/07/19/JS作用域/" data-id="ck0euqez80002v8ma2p2tad6z" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
 
     </footer>
   </div>
@@ -147,7 +161,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span>
   </nav>
 
 </section>

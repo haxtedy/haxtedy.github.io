@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-HTTP-CDN" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-linux-command" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/29/HTTP-CDN/" class="article-date">
-  <time datetime="2019-07-29T06:17:53.000Z" itemprop="datePublished">2019-07-29</time>
+    <a href="/2019/08/07/linux-command/" class="article-date">
+  <time datetime="2019-08-07T10:52:48.000Z" itemprop="datePublished">2019-08-07</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/29/HTTP-CDN/">HTTP_CDN</a>
+      <a class="article-title" href="/2019/08/07/linux-command/">linux_command</a>
     </h1>
   
 
@@ -86,20 +86,75 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="CDN概述"><a href="#CDN概述" class="headerlink" title="CDN概述"></a>CDN概述</h3><p>CDN的全称是Content Delivery Network，即内容分发网络。CDN是构建在网络之上的内容分发网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。CDN的关键技术主要有内容存储和分发技术。</p>
-<hr>
-<h3 id="CDN的优势："><a href="#CDN的优势：" class="headerlink" title="CDN的优势："></a>CDN的优势：</h3><ul>
-<li>CDN节点解决了跨运营商和跨地域访问的问题，访问延时大大降低；</li>
-<li>大部分请求在CDN边缘节点完成，CDN起到了分流作用，减轻了源站的负载。</li>
+        <ol>
+<li><p>ls：查看当前目录的信息。常用参数 -l :查看文件详细信息, -a ：查看当前目录所有文件，包括隐藏文件 .file。可连打 ls -al。</p>
+</li>
+<li><p>cd：全称是change directory，变换目录，不能进入文件。接受相对路径或者绝对路径的目录作为参数。cd .. 代表上级目录，cd / 斜杠代表的根目录。</p>
+</li>
+<li><p>mkdir：创建目录。参数 -p 为递归的创建目录,如 mkdir -p /lina/music。</p>
+</li>
+<li><p>mv 移动或者重命名文件(move)。</p>
+<ul>
+<li>mv 文件名 文件名        将源文件名改为目标文件名</li>
+<li>mv 文件名 目录名        将文件移动到目标目录</li>
+<li>mv 目录名 目录名        目标目录已存在，将源目录移动到目标目录；目标目录不存在则改名</li>
+<li>mv 目录名 文件名        出错</li>
 </ul>
+</li>
+<li><p>touch：接收pathname作为参数，创建空白文件。</p>
+</li>
+<li><p>cp：copy，复制文件或者文件夹，使用方式为：cp old_pathname new_pathname 加 r参数复制文件夹，f参数强制复制，覆盖，cp -rf 就是强制复制文件夹了。</p>
+</li>
+<li><p>scp：主要是在不同的Linux系统之间来回copy文件 。</p>
+<ul>
+<li>从 本地 复制到 远程 scp /home/daisy/full.tar.gz <a href="mailto:root@172.19.2.75" target="_blank" rel="noopener">root@172.19.2.75</a>:/home/root </li>
+<li>从 远程 复制到 本地 scp root@/172.19.2.75:/home/root/full.tar.gz /home/daisy/</li>
+</ul>
+</li>
+<li><p>rm：删除文件，或文件夹，rm pathname 删除文件，-r参数删除文件夹，-f参数强制删除，慎用切记一定慎用，最好别用rm -rf。</p>
+</li>
+<li><p>rmdir： 等同于 rm -r 不过rmdir只能删除空白文件夹。</p>
+</li>
+<li><p>cat：是linux下的一个文本输出命令。</p>
+<ul>
+<li>一次显示整个文件。   cat  filename</li>
+<li>从键盘创建一个文件，只能创建新文件,不能编辑已有文件。   cat  &gt;  filename</li>
+<li>将几个文件合并为一个文件。   cat   file1   file2  &gt; file</li>
+</ul>
+</li>
+<li><p>vim：vi是Linux中最基本的文本编辑器,vim就是vi的升级版，是所有Unix及Linux系统下标准的编辑器。</p>
+</li>
+<li><p>ln：用于将一个文件创建链接,链接分为软链接(类似于windows系统中的快捷方式)和硬链接(相当于对源文件copy，程序或命令对该文件block的另一个访问路口)，命令默认使用硬链接。</p>
+<p>语法：ln [选项] 源文件 链接文件<br>选项：-s 对源文件创建软链接</p>
+<p>ln -s 源文件 符号链接文件名 ln -s python3.5 python 这样python就是python3.5的一个符号链接文件了。</p>
+<p>需要多看看实际是怎么用的。</p>
+</li>
+<li><p>man：查询手册，获得帮助信息。</p>
+<ul>
+<li>1  普通命令   man 1 ls</li>
+<li>2  系统调用</li>
+<li>3  库函数</li>
+</ul>
+</li>
+<li><p>find：用来在文件系统中，查找一个文件所在。如：find 目录 -name 文件名    find /etc -name “interfaces”</p>
+</li>
+<li><p>ps：进程查看命令，可以确定有哪些进程正在运行和运行状态。它显示的是进程某一时刻的状态，并不连续。如果想对进程实时监控，应该用top命令。</p>
+<ul>
+<li>-a ： 显示现行终端机下的所有进程，包括其他用户的进程；</li>
+<li>x ：通常与 a 这个参数一起使用，可列出较完整信息。</li>
+</ul>
+</li>
+<li><p>grep：</p>
+</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://haxtedy.github.io/2019/07/29/HTTP-CDN/" data-id="cjz7rjs94000640uyrn4fsue0" class="article-share-link">Share</a>
+      <a data-url="https://haxtedy.github.io/2019/08/07/linux-command/" data-id="ck0euqf100015v8maztoxwy30" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络/">网络</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
 
     </footer>
   </div>
@@ -108,10 +163,10 @@
 
 
   
-    <article id="post-markdown-use" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-前端seo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/22/markdown-use/" class="article-date">
-  <time datetime="2019-07-22T05:40:27.000Z" itemprop="datePublished">2019-07-22</time>
+    <a href="/2019/08/05/前端seo/" class="article-date">
+  <time datetime="2019-08-05T10:49:22.000Z" itemprop="datePublished">2019-08-05</time>
 </a>
     
   </div>
@@ -122,7 +177,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/22/markdown-use/">markdown_use</a>
+      <a class="article-title" href="/2019/08/05/前端seo/">前端seo</a>
     </h1>
   
 
@@ -130,45 +185,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="标题："><a href="#标题：" class="headerlink" title="标题："></a>标题：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
-
-<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*斜体文本*</span><br><span class="line">_斜体文本_</span><br><span class="line">**粗体文本**</span><br><span class="line">__粗体文本__</span><br><span class="line">***粗斜体文本***</span><br><span class="line">___粗斜体文本___</span><br></pre></td></tr></table></figure>
-
-<h3 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">***</span><br></pre></td></tr></table></figure>
-
-<h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~ BAIDU.COM ~~</span><br></pre></td></tr></table></figure>
-
-<h3 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h3><p>通过 HTML 的 <strong><u></u></strong> 标签来实现:</p>
-<p><u>例子</u></p>
-<h3 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[^要注明的文本]</span><br></pre></td></tr></table></figure>
-
-<p>创建脚注格式类似这样 [^RUNOOB]。</p>
-<p>[^RUNOOB]: 菜鸟教程 – 学的不仅是技术，更是梦想！！！</p>
-<h3 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h3><p>Markdown 区块引用是在段落开头使用 <code>&gt;</code> 符号 ，然后后面紧跟一个<strong>空格</strong>符号。</p>
-<p>区块是可以<strong>嵌套</strong>的，一个 <code>&gt;</code> 符号是最外层，两个 <code>&gt;</code> 符号是第一层嵌套。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ul>
-<li>如果是段落上的一个函数或片段的代码可以用反引号把它包起来（<strong>`</strong>）。</li>
-<li>代码区块可以用 <strong>```</strong> 包裹一段代码</li>
+        <h3 id="SEO简介"><a href="#SEO简介" class="headerlink" title="SEO简介"></a>SEO简介</h3><ul>
+<li>全称：Search Engine Optimization，搜素引擎优化</li>
+<li>作用：提升网页在<strong>搜索引擎自然搜索结果</strong>中的<a href="https://baike.baidu.com/item/网站收录量/15747665" target="_blank" rel="noopener">收录量</a>以及排序位置而做的优化</li>
+<li>分类：白帽SEO和黑帽SEO</li>
 </ul>
-<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[链接名称](链接地址)</span><br></pre></td></tr></table></figure>
-
-<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![alt 属性文本](图片地址)</span><br></pre></td></tr></table></figure>
-
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|  表头   | 表头  |</span><br><span class="line">|  ----  | ----  |</span><br><span class="line">| 单元格  | 单元格 |</span><br><span class="line">| 单元格  | 单元格 |</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>-:</strong> 设置内容和标题栏居右对齐。</li>
-<li><strong>:-</strong> 设置内容和标题栏居左对齐。</li>
-<li><strong>:-:</strong> 设置内容和标题栏居中对齐。</li>
-</ul>
+<p><strong>SEO优化</strong></p>
+<p><strong>1.</strong> <strong>网站结构布局优化</strong></p>
+<p><strong>1.</strong> <strong>控制首页链接数量**</strong>：链接太少，搜索引擎往下爬到页内，影响网站收录数量；链接太多，影响用户体验。</p>
+<p><strong>2. 扁平化的目录层次</strong>：建立的网站结构层次越少，越容易被抓取，保持三层目录结构也是用户体验的需要。</p>
+<p><strong>3. 导航优化</strong>：导航尽量采用文字，也可以搭配图片导航，但图片需进行优化，如<img>标签必须加’alt’和’title’属性；尽量加上面包屑导航，让用户更好了解当前所在位置，理解网站布局，让搜索引擎了解网站结构，同时增加了大量的内部链接，方便数据抓取：</p>
+<blockquote>
+<p>img图片标签alt和title属性的区别：</p>
+<ol>
+<li><p>alt是给搜索引擎识别，在图像无法显示时的替代文本</p>
+</li>
+<li><p>title是关于元素的注释信息，主要是给用户解读，当鼠标放到文字或是图片上时有title文字显示</p>
+</li>
+</ol>
+</blockquote>
+<p>　　<strong>4. 控制页面大小，减少http请求，提高网站加载速度</strong><br>　　<strong>5. 合理的网站布局</strong></p>
+<blockquote>
+<p>页面头部：logo、主导航、用户信息<br>页面主题：左边正文（包括面包屑导航及正文），右边热门文章和相关文章<br>页面底部：版权信息、友情链接</p>
+</blockquote>
+<p><strong>2.  网站代码优化</strong><br>　　<strong>1. <title>标题</title></strong>：只强调重点即可，尽量把重要的关键词放在前面，关键词不要重复出现，尽量做到每个页面的<title>标题中不要设置相同的内容<br>　　<strong>2. <meta keywords>标签</strong>：关键词，列举出几个页面的重要关键字即可，切记过分堆砌。<br>　　<strong>3. <meta description>标签</strong>：网页描述，需要高度概括网页内容，切记不能太长，过分堆砌关键词，每个页面也要有所不同。<br>　　<strong>4. <body>中的标签</body></strong>：尽量让代码语义化，在适当的位置使用适当的标签，用正确的标签做正确的事。让阅读源码者和“蜘蛛”都一目了然。比如：h1-h6 是用于标题类的，nav标签是用来设置页面主导航的等。<br>　　<strong>5. a标签</strong>：页内链接，要加“title”属性加以说明，让访客和“蜘蛛”知道。而外部链接，链接到其他网站的，则需要加上rel=”nofollow”属性,告诉“蜘蛛”不要爬，因为一旦“蜘蛛”爬了外部链接之后，就不会再回来了。<br>　　<strong>6. 正文标题要用h1标签</strong>：搜索引擎认为它最重要，若不喜欢它的默认样式可以通过CSS设置。尽量做到正文标题用h1标签，副标题用h2标签,而其它地方不应该随便乱用 h 标题标签。<br>　　<strong>7. br标签</strong>：只用于文本内容的换行<br>　　<strong>8. 表格应该使用caption表格标题标签</strong><br>　　<strong>9. img应使用 “alt” 属性加以说明</strong><br>　　<strong>10. strong、em标签</strong>：需要强调时使用。strong标签在搜索引擎中能够得到高度的重视，它能突出关键词，表现重要的内容，em标签强调效果仅次于strong标签。<em>b、i标签: 只是用于显示效果时使用，在SEO中不会起任何效果。</em></title></p>
+<p>　　<strong>11. 文本缩进不要使用特殊符号’&amp;nbsp’;应当使用CSS进行设置。版权符号不要使用特殊符号 ‘&amp;copy’; 可以直接使用输入法，拼“banquan”，选择序号5就能打出版权符号©。</strong><br>　　<strong>12. 巧妙利用CSS布局，将重要内容的HTML代码放在最前面</strong>：最前面的内容被认为是最重要的，优先让“蜘蛛”读取，进行内容关键词抓取。<br>　　<strong>13. 重要内容不要用JS输出</strong>：因为“蜘蛛”不认识<br>　　<strong>14. 尽量少使用iframe框架</strong>：因为“蜘蛛”一般不会读取其中的内容<br>　　<strong>15. 谨慎使用 ‘display：none’</strong>：对于不想显示的文字内容，应当设置z-index或设置到浏览器显示器之外。因为搜索引擎会过滤掉display:none其中的内容。<br>　　<strong>16. js代码如果是操作DOM操作，应尽量放在body结束标签之前，html代码之后。</strong><br>　　<strong>17. 增加网站的404页面</strong>：一是有利于提高用户体验，最主要的是防止蜘蛛爬虫丢失。<br>　　<strong>18. 添加canonical标签</strong>：当我们的网页可以通过多个URL来访问时，我们可以通过添加canonical标签告诉搜索引擎这多个URL中的首选网址。通常搜索引擎会将指定的页面视为最有价值最规范的页面。</p>
+<p>摘自：<a href="https://www.cnblogs.com/mengbing/p/10796327.html" target="_blank" rel="noopener">https://www.cnblogs.com/mengbing/p/10796327.html</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://haxtedy.github.io/2019/07/22/markdown-use/" data-id="cjz7rjs96000840uyqu1dur32" class="article-share-link">Share</a>
+      <a data-url="https://haxtedy.github.io/2019/08/05/前端seo/" data-id="ck0euqezw000iv8mac9r0p8jg" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端综合知识点/">前端综合知识点</a></li></ul>
 
     </footer>
   </div>
@@ -181,7 +231,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -195,7 +245,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/career/">career</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端综合知识点/">前端综合知识点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/career/">career</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端综合知识点/">前端综合知识点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li></ul>
     </div>
   </div>
 
@@ -205,7 +255,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/career/" style="font-size: 10px;">career</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/前端综合知识点/" style="font-size: 10px;">前端综合知识点</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a>
+      <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/career/" style="font-size: 15px;">career</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/前端综合知识点/" style="font-size: 10px;">前端综合知识点</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/网络/" style="font-size: 15px;">网络</a>
     </div>
   </div>
 
@@ -214,7 +264,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
     </div>
   </div>
 
@@ -227,23 +277,23 @@
       <ul>
         
           <li>
-            <a href="/2019/08/11/less/">less</a>
+            <a href="/2019/09/09/job-interview/">job_interview</a>
           </li>
         
           <li>
-            <a href="/2019/08/07/linux-command/">linux_command</a>
+            <a href="/2019/09/05/BFC/">BFC</a>
           </li>
         
           <li>
-            <a href="/2019/08/05/前端seo/">前端seo</a>
+            <a href="/2019/08/19/流式布局和响应式布局/">布局</a>
           </li>
         
           <li>
-            <a href="/2019/08/01/python构造函数的坑/">python构造函数的坑</a>
+            <a href="/2019/08/19/TCP-IP/">TCP-IP</a>
           </li>
         
           <li>
-            <a href="/2019/07/30/一些html概念的理解/">一些html概念的理解</a>
+            <a href="/2019/08/12/pt-px/">pt_px</a>
           </li>
         
       </ul>

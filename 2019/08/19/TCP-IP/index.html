@@ -5,15 +5,20 @@
   
 
   
-  <title>haxtedy</title>
+  <title>TCP-IP | haxtedy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="haxtedy">
-<meta property="og:url" content="https://haxtedy.github.io/page/2/index.html">
+  <meta name="description" content="OSIOSI（Open System Interconnection），开放系统互联。OSI模型定义了不同计算机互联的标准。 OSI把网络通信分为7层：物理层、数据链路层、网络层(ip)、传输层(tcp)、会话层、表示层、应用层(http)。 这是一种事实上被TCP/IP 4层模型淘汰的协议。在当今世界上没有大规模使用。 TCP/IPCP/IP协议（传输控制协议/互联网协议）不是简单的一个协议，而">
+<meta name="keywords" content="网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TCP-IP">
+<meta property="og:url" content="https://haxtedy.github.io/2019/08/19/TCP-IP/index.html">
 <meta property="og:site_name" content="haxtedy">
+<meta property="og:description" content="OSIOSI（Open System Interconnection），开放系统互联。OSI模型定义了不同计算机互联的标准。 OSI把网络通信分为7层：物理层、数据链路层、网络层(ip)、传输层(tcp)、会话层、表示层、应用层(http)。 这是一种事实上被TCP/IP 4层模型淘汰的协议。在当今世界上没有大规模使用。 TCP/IPCP/IP协议（传输控制协议/互联网协议）不是简单的一个协议，而">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-19T08:31:33.560Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="haxtedy">
+<meta name="twitter:title" content="TCP-IP">
+<meta name="twitter:description" content="OSIOSI（Open System Interconnection），开放系统互联。OSI模型定义了不同计算机互联的标准。 OSI把网络通信分为7层：物理层、数据链路层、网络层(ip)、传输层(tcp)、会话层、表示层、应用层(http)。 这是一种事实上被TCP/IP 4层模型淘汰的协议。在当今世界上没有大规模使用。 TCP/IPCP/IP协议（传输控制协议/互联网协议）不是简单的一个协议，而">
   
     <link rel="alternate" href="/atom.xml" title="haxtedy" type="application/atom+xml">
   
@@ -62,68 +67,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-流式布局和响应式布局" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/19/流式布局和响应式布局/" class="article-date">
-  <time datetime="2019-08-19T08:59:34.000Z" itemprop="datePublished">2019-08-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/19/流式布局和响应式布局/">布局</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>参考：<a href="https://www.cnblogs.com/yanayana/p/7066948.html" target="_blank" rel="noopener">https://www.cnblogs.com/yanayana/p/7066948.html</a></p>
-<h2 id="静态布局"><a href="#静态布局" class="headerlink" title="静态布局"></a>静态布局</h2><ol>
-<li>布局特点：通过设置min-width，让网页布局始终按照最初写的代码来显示。如果浏览器尺寸小于min-width，就会出现滚动条，如果大于这个宽度，则内容居中外加背景。</li>
-</ol>
-<h2 id="流式布局"><a href="#流式布局" class="headerlink" title="流式布局"></a>流式布局</h2><ol>
-<li>布局特点：屏幕分辨率变化时，页面里元素的大小会变化而但布局不变。【这就导致如果屏幕太大或者太小都会导致元素无法正常显示】</li>
-<li>设计方法：使用%百分比定义宽度，高度大多是用px来固定住。往往配合max-width/min-width等属性控制尺寸流动范围以免过大或者过小影响阅读。</li>
-<li>缺陷：百分比可以缩小或者拉伸宽度，但高度和文字大小都是使用px来固定，这些不会变，无法变得“流式”。</li>
-</ol>
-<h2 id="自适应布局"><a href="#自适应布局" class="headerlink" title="自适应布局"></a>自适应布局</h2><ol>
-<li>布局特点：屏幕分辨率变化时，页面里面元素的位置会变化而大小不会变化。</li>
-<li>设计方法：使用@media媒体查询给不同尺寸和介质的设备切换不同的样式。</li>
-</ol>
-<h2 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h2><ol>
-<li>布局特点：每个屏幕分辨率下面会有一个布局样式，即元素位置和大小都会变。</li>
-<li>设计方法：媒体查询+流式布局。通常使用 @media 媒体查询 和网格系统 (Grid System) 配合相对布局单位进行布局，实际上就是综合响应式、流动等上述技术通过 CSS 给单一网页不同设备返回不同样式的技术统称。</li>
-<li>缺点：（1）媒体查询是有限的，也就是可以枚举出来的，只能适应主流的宽高。（2）要匹配足够多的屏幕大小，工作量不小，设计也需要多个版本。</li>
-</ol>
-<h2 id="弹性布局"><a href="#弹性布局" class="headerlink" title="弹性布局"></a>弹性布局</h2><ol>
-<li>布局特点：包裹文字的各元素的尺寸采用em/rem做单位，改变浏览器宽度，页面所有元素的高宽都等比例缩放。</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://haxtedy.github.io/2019/08/19/流式布局和响应式布局/" data-id="ck0euqf0v0011v8ma8nxzio8s" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-TCP-IP" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-TCP-IP" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/19/TCP-IP/" class="article-date">
   <time datetime="2019-08-19T00:59:03.000Z" itemprop="datePublished">2019-08-19</time>
@@ -136,8 +80,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/19/TCP-IP/">TCP-IP</a>
+    <h1 class="article-title" itemprop="name">
+      TCP-IP
     </h1>
   
 
@@ -193,16 +137,28 @@
     </footer>
   </div>
   
-</article>
-
+    
+<nav id="article-nav">
+  
+    <a href="/2019/08/19/流式布局和响应式布局/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          布局
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/12/pt-px/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">pt_px</div>
+    </a>
+  
+</nav>
 
   
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-  </nav>
+</article>
 
 </section>
         
