@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-前端的一些面试点" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-python构造函数的坑" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/30/前端的一些面试点/" class="article-date">
-  <time datetime="2019-07-30T00:49:27.000Z" itemprop="datePublished">2019-07-30</time>
+    <a href="/2019/08/01/python构造函数的坑/" class="article-date">
+  <time datetime="2019-08-01T07:48:05.000Z" itemprop="datePublished">2019-08-01</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/30/前端的一些面试点/">前端的一些面试点</a>
+      <a class="article-title" href="/2019/08/01/python构造函数的坑/">python构造函数的坑</a>
     </h1>
   
 
@@ -86,44 +86,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-输入完网址按下回车，到看到网页这个过程中发生了什么？"><a href="#1-输入完网址按下回车，到看到网页这个过程中发生了什么？" class="headerlink" title="1.输入完网址按下回车，到看到网页这个过程中发生了什么？"></a>1.输入完网址按下回车，到看到网页这个过程中发生了什么？</h4><ul>
-<li>域名解析：DNS（Domain Name Server，域名服务器）将域名解析为对应的IP地址。</li>
-<li>发起TCP的3次握手，建立客户端与服务器的连接。</li>
-<li>客户端发起http请求。</li>
-<li>服务器响应http请求，返回请求页面的html代码。</li>
-<li>浏览器得到html代码后，解析html代码，并请求html代码中的资源。</li>
-<li>服务器再次返回请求资源。</li>
-<li>浏览器得到所需的所有资源，对页面进行渲染，呈现给用户。</li>
-</ul>
-<h4 id="2-浏览器渲染页面的过程"><a href="#2-浏览器渲染页面的过程" class="headerlink" title="2.浏览器渲染页面的过程"></a>2.浏览器渲染页面的过程</h4><ul>
-<li></li>
-</ul>
-<h4 id="3-Get与Post的区别"><a href="#3-Get与Post的区别" class="headerlink" title="3.Get与Post的区别"></a>3.Get与Post的区别</h4><ul>
-<li>get重点在从服务器上获取资源；post重点在向服务器发送数据；</li>
-<li>get传输数据是通过URL请求，以field（字段）= value的形式，置于URL后，并用”?”连接，多个请求数据间用”&amp;”连接，如<a href="http://127.0.0.1/Test/login.action?name=admin&amp;password=admin，这个过程用户是可见的；" target="_blank" rel="noopener">http://127.0.0.1/Test/login.action?name=admin&amp;password=admin，这个过程用户是可见的；</a> post传输数据通过Http的post机制，将字段与对应值封存在请求实体中发送给服务器，这个过程对用户是不可见的；</li>
-<li>Get传输的数据量小，因为受URL长度限制，但效率较高；Post可以传输大量数据，所以上传文件时只能用Post方式；</li>
-<li>get是不安全的，因为URL是可见的，可能会泄露私密信息，如密码等； post较get安全性较高；</li>
-<li>get方式只能支持ASCII字符，向服务器传的中文字符可能会乱码。post支持标准字符集，可以正确传递中文字符。</li>
-</ul>
-<h4 id="4-浏览器的缓存机制"><a href="#4-浏览器的缓存机制" class="headerlink" title="4.浏览器的缓存机制"></a>4.浏览器的缓存机制</h4><p>参考：<a href="https://www.jianshu.com/p/54cc04190252" target="_blank" rel="noopener">https://www.jianshu.com/p/54cc04190252</a></p>
-<p><strong>缓存机制：</strong>判断本地缓存是否过期，如果没有过期，直接使用，否则使用协商缓存。</p>
-<p><strong>强缓存</strong>：强缓存生效返回200，与协商缓存失效的返回一样，但是它来自于<strong>from disk cache或from memory cache</strong></p>
-<p>Expires(http/1.0)：判断缓存是否过期。缺陷：存的是服务器端的时间，与客户端时间有出入。</p>
-<p>Cache-Control(http/1.1)：包含很多指令，比如max-age;no-cache;no-store等。max-age中保存的是持续时间而不是时间点，这是优于Expires的地方。</p>
-<p><strong>协商缓存</strong>：向服务器发送请求，判断本地缓存是否被更新过，没有就直接使用本地缓存，更新了，服务器需要发送新的内容。</p>
-<p>Last-Modified 和If-Modified-Since：根据时间的改动。Last-Modified服务器发送给客户端，资源内容最后被更新的时间，会保存在本地缓存中。浏览器发送请求时，会附带If-Modified-Since，也就是本地缓存之前保存的Last-Modified，如果服务器端的Last-Modified和If-Modified-Since相等，说明没有更改，可以直接使用本地缓存，返回304；否则返回200，并且发送新的内容。缺陷：只能以秒计时，另外本地打开缓存文件，会修改Last-Modified。</p>
-<p>ETag和If-None-Match：根据内容的改动。ETag是资源内容的一个唯一标识，由服务器计算产生，当资源发生变化，ETag就会重新生成。服务器发送给浏览器资源及其ETag。当浏览器发送请求时，会将ETag放到If-None-Match中，如果If-None-Match和服务器端的ETag匹配上了，就返回304，否则返回200，并且发送新的内容。</p>
-<p><img src="/img/1.png" alt></p>
-<p>Ctrl+F5强制刷新</p>
-<p>Ctrl+shift+del 删除缓存</p>
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, tools=[])</span>:</span></span><br><span class="line">        <span class="comment">#这种写法是错误的，因为只会生成一个初始的数组，导致stu1和stu2这种默认赋值的tools都指向同一个地址。</span></span><br><span class="line">        self.tools = tools</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_tool</span><span class="params">(self,value)</span>:</span></span><br><span class="line">        self.tools.append(value)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    stu1 = Student()</span><br><span class="line">    stu2 = Student()</span><br><span class="line">    stu3 = Student([<span class="string">'toycar'</span>])</span><br><span class="line">    stu1.add_tool(<span class="string">'bear'</span>)</span><br><span class="line">    print(stu2.tools)<span class="comment">#['bear']，stu1和stu2的tools实际指向了同一个地址。</span></span><br><span class="line">    print(stu3.tools)<span class="comment">#['toycar']，stu3是自己赋值的，所以地址不同。</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://haxtedy.github.io/2019/07/30/前端的一些面试点/" data-id="ck0euqf0t000zv8ma990wtxqo" class="article-share-link">Share</a>
+      <a data-url="https://haxtedy.github.io/2019/08/01/python构造函数的坑/" data-id="ck1lg5c5d000xnkma1c780u4v" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/career/">career</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
 
     </footer>
   </div>
@@ -132,10 +104,10 @@
 
 
   
-    <article id="post-HTTP-CDN" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-一些html概念的理解" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/29/HTTP-CDN/" class="article-date">
-  <time datetime="2019-07-29T06:17:53.000Z" itemprop="datePublished">2019-07-29</time>
+    <a href="/2019/07/30/一些html概念的理解/" class="article-date">
+  <time datetime="2019-07-30T01:20:58.000Z" itemprop="datePublished">2019-07-30</time>
 </a>
     
   </div>
@@ -146,7 +118,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/29/HTTP-CDN/">HTTP_CDN</a>
+      <a class="article-title" href="/2019/07/30/一些html概念的理解/">一些html概念的理解</a>
     </h1>
   
 
@@ -154,20 +126,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="CDN概述"><a href="#CDN概述" class="headerlink" title="CDN概述"></a>CDN概述</h3><p>CDN的全称是Content Delivery Network，即内容分发网络。CDN是构建在网络之上的内容分发网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。CDN的关键技术主要有内容存储和分发技术。</p>
-<hr>
-<h3 id="CDN的优势："><a href="#CDN的优势：" class="headerlink" title="CDN的优势："></a>CDN的优势：</h3><ul>
-<li>CDN节点解决了跨运营商和跨地域访问的问题，访问延时大大降低；</li>
-<li>大部分请求在CDN边缘节点完成，CDN起到了分流作用，减轻了源站的负载。</li>
-</ul>
+        <h4 id="1-元素的高度和元素的内容高度"><a href="#1-元素的高度和元素的内容高度" class="headerlink" title="1.元素的高度和元素的内容高度"></a>1.元素的高度和元素的内容高度</h4><p>高度不能真实表达元素实质容纳内容的高度。因为元素的内容高度可能超过元素的高度，此时，有一部分内容处于不可见状态，比如出现垂直滚动条。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://haxtedy.github.io/2019/07/29/HTTP-CDN/" data-id="ck0euqezn000cv8mabysmo52r" class="article-share-link">Share</a>
+      <a data-url="https://haxtedy.github.io/2019/07/30/一些html概念的理解/" data-id="ck1lg5c5b000wnkmajb9pdanp" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络/">网络</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
 
     </footer>
   </div>
@@ -180,7 +147,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -194,7 +161,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/career/">career</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端综合知识点/">前端综合知识点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/career/">career</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端综合知识点/">前端综合知识点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li></ul>
     </div>
   </div>
 
@@ -204,7 +171,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/career/" style="font-size: 15px;">career</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/前端综合知识点/" style="font-size: 10px;">前端综合知识点</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/网络/" style="font-size: 15px;">网络</a>
+      <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/career/" style="font-size: 20px;">career</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/前端综合知识点/" style="font-size: 10px;">前端综合知识点</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/网络/" style="font-size: 15px;">网络</a>
     </div>
   </div>
 
@@ -226,7 +193,15 @@
       <ul>
         
           <li>
-            <a href="/2019/09/09/job-interview/">job_interview</a>
+            <a href="/2019/09/23/mysql/">mysql</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/23/华为/">华为</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/09/小米/">job_interview</a>
           </li>
         
           <li>
@@ -235,14 +210,6 @@
         
           <li>
             <a href="/2019/08/19/流式布局和响应式布局/">布局</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/19/TCP-IP/">TCP-IP</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/12/pt-px/">pt_px</a>
           </li>
         
       </ul>

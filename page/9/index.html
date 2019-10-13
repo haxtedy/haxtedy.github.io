@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-n-file" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-字符串转数字" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/20/n-file/" class="article-date">
-  <time datetime="2019-07-20T07:45:35.000Z" itemprop="datePublished">2019-07-20</time>
+    <a href="/2019/07/22/字符串转数字/" class="article-date">
+  <time datetime="2019-07-22T01:16:02.000Z" itemprop="datePublished">2019-07-22</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/20/n-file/">n_file</a>
+      <a class="article-title" href="/2019/07/22/字符串转数字/">字符串与数字之间的转换</a>
     </h1>
   
 
@@ -86,66 +86,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://haxtedy.github.io/2019/07/20/n-file/" data-id="ck0euqezg0006v8maclljo8sx" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JS作用域" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/19/JS作用域/" class="article-date">
-  <time datetime="2019-07-19T08:44:16.000Z" itemprop="datePublished">2019-07-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/19/JS作用域/">JS作用域</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><em>js中的作用域分为<strong>全局作用域</strong>和<strong>局部作用域(方法作用域)</strong>。在ES6中新增了<strong>块级作用域</strong>。</em></p>
-<hr>
-<h2 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h2><p><strong>var</strong>定义的变量属于<strong>局部作用域</strong>，所以在 <code>if</code> 或是 <code>for</code> 这样逻辑语句中使用<strong>var</strong>定义的变量，都是可以在其所属的作用域中访问的。以下代码，<code>a</code>和<code>b</code>实际上都是定义在全局作用域中，此处var的范围扩展到了全局。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 输出1</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="局部作用域"><a href="#局部作用域" class="headerlink" title="局部作用域"></a>局部作用域</h2><p>局部作用域也可以称之为函数作用域、方法作用域。</p>
-<ul>
-<li><p>局部作用域中定义的变量，只供局部作用域调用，外界无法访问。</p>
-</li>
-<li><p>在局部作用域中，可以访问其父级作用域中的变量（不包括父级的this和arguments）。这里涉及了<strong>作用域链</strong>。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'a'</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);<span class="comment">//a</span></span><br><span class="line">    <span class="keyword">var</span> b = <span class="string">'b'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(b);<span class="comment">//b</span></span><br><span class="line">&#125;)();</span><br><span class="line"><span class="built_in">console</span>.log(b);<span class="comment">//ReferenceError: b is not defined</span></span><br></pre></td></tr></table></figure>
-
-</li>
+        <h2 id="字符串转数字"><a href="#字符串转数字" class="headerlink" title="字符串转数字"></a>字符串转数字</h2><ul>
+<li>使用[<code>parseInt</code>]</li>
 </ul>
-<hr>
-<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><p>块作用域由 { } 包括，if语句和for语句里面的{ }也属于块作用域。<strong>let</strong>和<strong>const</strong>定义的变量属于块级作用域。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://haxtedy.github.io/2019/07/19/JS作用域/" data-id="ck0euqez80002v8ma2p2tad6z" class="article-share-link">Share</a>
+      <a data-url="https://haxtedy.github.io/2019/07/22/字符串转数字/" data-id="ck1lg5c5p0016nkmam4e7uvag" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
@@ -157,11 +105,47 @@
 
 
   
+    <article id="post-axios" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/21/axios/" class="article-date">
+  <time datetime="2019-07-21T07:23:57.000Z" itemprop="datePublished">2019-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/21/axios/">axios</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://haxtedy.github.io/2019/07/21/axios/" data-id="ck1lg5c460005nkmaj8hwjn2u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span>
+    <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -175,7 +159,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/career/">career</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端综合知识点/">前端综合知识点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/career/">career</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端综合知识点/">前端综合知识点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li></ul>
     </div>
   </div>
 
@@ -185,7 +169,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/career/" style="font-size: 15px;">career</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/前端综合知识点/" style="font-size: 10px;">前端综合知识点</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/网络/" style="font-size: 15px;">网络</a>
+      <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/career/" style="font-size: 20px;">career</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/前端综合知识点/" style="font-size: 10px;">前端综合知识点</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/网络/" style="font-size: 15px;">网络</a>
     </div>
   </div>
 
@@ -207,7 +191,15 @@
       <ul>
         
           <li>
-            <a href="/2019/09/09/job-interview/">job_interview</a>
+            <a href="/2019/09/23/mysql/">mysql</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/23/华为/">华为</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/09/小米/">job_interview</a>
           </li>
         
           <li>
@@ -216,14 +208,6 @@
         
           <li>
             <a href="/2019/08/19/流式布局和响应式布局/">布局</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/19/TCP-IP/">TCP-IP</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/12/pt-px/">pt_px</a>
           </li>
         
       </ul>

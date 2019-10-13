@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-job-interview" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-mysql" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/09/09/job-interview/" class="article-date">
-  <time datetime="2019-09-09T06:52:38.000Z" itemprop="datePublished">2019-09-09</time>
+    <a href="/2019/09/23/mysql/" class="article-date">
+  <time datetime="2019-09-23T07:33:14.000Z" itemprop="datePublished">2019-09-23</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/09/job-interview/">job_interview</a>
+      <a class="article-title" href="/2019/09/23/mysql/">mysql</a>
     </h1>
   
 
@@ -86,57 +86,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="小米"><a href="#小米" class="headerlink" title="小米"></a>小米</h2><h3 id="一面：视频面"><a href="#一面：视频面" class="headerlink" title="一面：视频面"></a>一面：视频面</h3><p>这是我的第一个面试，面试官是一位做前端开发的妹子，长得挺好看的，人也比较亲切。总体来说，这是一场偏向基础的面试，问的比较全面，没有仔细问项目，不是很难，但我答得不算很好，好几个问题都答得有点水。下面总结一下，我答得不好的几个问题。</p>
-<h4 id="new一个对象的过程"><a href="#new一个对象的过程" class="headerlink" title="new一个对象的过程"></a>new一个对象的过程</h4><p>1.这个过程充分体现了“组合继承”的特点，主要分为如下三步：</p>
-<ul>
-<li>以构造器的prototype属性为原型，创建新对象。</li>
-<li>将新对象和调用参数传给构造器，执行；</li>
-<li>返回第一步创建的对象。</li>
-</ul>
-<p>2.手动实现一个new方法。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> newMethod = <span class="function"><span class="keyword">function</span>(<span class="params">Person, ...rest</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = <span class="built_in">Object</span>.create(Person.prototype);</span><br><span class="line">    Person.apply(obj,rest);</span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> hx = newMethod(Person,<span class="string">"haxtedy"</span>,<span class="number">25</span>);</span><br><span class="line"><span class="built_in">console</span>.log(hx.name);</span><br><span class="line"><span class="built_in">console</span>.log(hx.age);</span><br><span class="line">hx.sayName();</span><br></pre></td></tr></table></figure>
+        <h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE [IF NOT EXISTS] &lt;数据库名&gt;</span><br><span class="line">[[DEFAULT] CHARACTER SET &lt;字符集名&gt;] </span><br><span class="line">[[DEFAULT] COLLATE &lt;校对规则名&gt;];</span><br></pre></td></tr></table></figure>
 
-<h4 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h4><ul>
-<li>构造函数、原型和实例的关系：每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。</li>
-<li>让原型对象等于另一个类型的实例（重写原型对象），这样，原型对象内部就会有一个指向另一个原型对象的指针。到这里，已经实现了简单的原型链，即一个原型内部有一个指向另一个原型的指针。上述关系扩展出去，就可以得到复杂的原型链了。继承的顶点是Object。</li>
-<li>原型链在继承中有重要的作用。</li>
-<li>所有引用类型默认都继承了Object，这个继承也是通过原型链实现的。</li>
-</ul>
-<h4 id="闭包的应用"><a href="#闭包的应用" class="headerlink" title="闭包的应用"></a>闭包的应用</h4><p>闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。</p>
-<p>闭包涉及了作用域链的知识，只有闭包的匿名函数的作用域链被销毁了，被它调用的作用域才会安全销毁。</p>
-<h4 id="对象深复制"><a href="#对象深复制" class="headerlink" title="对象深复制"></a>对象深复制</h4><ol>
-<li><p>使用JSON.stringfy()和JSON.parse()来解决这个问题。</p>
-<p>当值为undefined、function、symbol时，会在转换过程中忽略他们，导致属性丢失。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> syb = <span class="built_in">Symbol</span>(<span class="string">'hax'</span>);</span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    name: <span class="string">'haxtedy'</span>,</span><br><span class="line">    say: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"hi"</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    ok: syb,</span><br><span class="line">    un: <span class="literal">undefined</span>,</span><br><span class="line">    un2: <span class="literal">null</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> copy = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(person));</span><br><span class="line"><span class="built_in">console</span>.log(copy);<span class="comment">// &#123; name: 'haxtedy', un2: null &#125;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用递归的方式，对每一个对象都递归，原始值和null可以直接复制。</p>
-<p>缺点：1.没有考虑复制对象的原型。2.递归爆栈问题。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> syb = <span class="built_in">Symbol</span>(<span class="string">'hax'</span>);</span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    name: <span class="string">'haxtedy'</span>,</span><br><span class="line">    say: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"hi"</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    ok: syb,</span><br><span class="line">    un: <span class="literal">undefined</span>,</span><br><span class="line">    un2: <span class="literal">null</span>,</span><br><span class="line">    arr:[<span class="number">1</span>,&#123;<span class="attr">age</span>:<span class="number">18</span>&#125;]</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = <span class="built_in">Array</span>.isArray(obj) ? [] : &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">        <span class="keyword">if</span> (obj.hasOwnProperty(key)) &#123;<span class="comment">//判断属性是否是存在于自己的实例中，如果是：返回true,如果仅仅存在自己的原型中，则返回false</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">typeof</span> (obj[key]) === <span class="string">'object'</span> &amp;&amp; obj[key]!=<span class="literal">null</span>)&#123;</span><br><span class="line">                result[key] = deepCopy(obj[key]);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                result[key] = obj[key];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> copy = deepCopy(person);</span><br><span class="line"><span class="built_in">console</span>.log(copy);</span><br><span class="line"><span class="comment">// &#123; name: 'haxtedy',</span></span><br><span class="line"><span class="comment">//   say: [Function: say],</span></span><br><span class="line"><span class="comment">//   ok: Symbol(hax),</span></span><br><span class="line"><span class="comment">//   un: undefined,</span></span><br><span class="line"><span class="comment">//   un2: null,</span></span><br><span class="line"><span class="comment">//   arr: [ 1, &#123; age: 18 &#125; ] &#125;</span></span><br></pre></td></tr></table></figure>
+<p>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE DATABASE IF NOT EXISTS test_db_char</span><br><span class="line">    -&gt; DEFAULT CHARACTER SET utf8;</span><br></pre></td></tr></table></figure>
 
-</li>
-</ol>
-<h4 id="Async和await"><a href="#Async和await" class="headerlink" title="Async和await"></a>Async和await</h4><h4 id="css计算属性"><a href="#css计算属性" class="headerlink" title="css计算属性"></a>css计算属性</h4><p><a href="http://www.fly63.com/article/detial/256" target="_blank" rel="noopener">廖雪峰：css3中样式计算属性calc()的使用和总结</a></p>
-<p>css3中新增了计算属性calc()。它可以用来计算各种长度。</p>
-<ul>
-<li><p><strong>clac()的用法</strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.element</span>&#123;</span><br><span class="line">	<span class="attribute">width</span>:<span class="built_in">calc</span>(expression);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE &lt;表名&gt; ([表定义选项])[表选项][分区选项];</span><br></pre></td></tr></table></figure>
 
-<p>其中，expression是一个用来计算长度的表达式，支持“+”，“-”，“<em>”，“/”运算符。<br>*</em>注意1：** 表达式中有“+”和“-”时，其前后必须要有<strong>空格</strong>，而对于“*”，“/”并没有这种要求，但为了风格的统一，建议前后也要留空格。</p>
-<p><strong>注意2：</strong>使用 * / 运算符时,必须保证有一个值为数值类型。</p>
-</li>
-</ul>
-<h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>background-color属性会覆盖content和padding部分，不覆盖border和margin。</p>
-<h4 id="visibility与display"><a href="#visibility与display" class="headerlink" title="visibility与display"></a>visibility与display</h4><p>visibility设置为hidden 与 display 设置为none，都可以隐藏元素，但设置visibility的元素仍然占据文档流位置，设置display的元素则直接从dom树，从文档流中删除了。</p>
-<p>这里可以引出隐藏元素的方式有哪几种？</p>
-<h4 id="Vue路由钩子"><a href="#Vue路由钩子" class="headerlink" title="Vue路由钩子"></a>Vue路由钩子</h4><h4 id="Vue切换hash模式"><a href="#Vue切换hash模式" class="headerlink" title="Vue切换hash模式"></a>Vue切换hash模式</h4><p>可以通过mode来切换路由模式</p>
-<h4 id="Vue子组件改变数据，父组件会跟着改变吗？"><a href="#Vue子组件改变数据，父组件会跟着改变吗？" class="headerlink" title="Vue子组件改变数据，父组件会跟着改变吗？"></a>Vue子组件改变数据，父组件会跟着改变吗？</h4>
+<p>其中，<code>[表定义选项]</code>的格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;列名1&gt; &lt;类型1&gt; [,…] &lt;列名n&gt; &lt;类型n&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="插入语句"><a href="#插入语句" class="headerlink" title="插入语句"></a>插入语句</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO &lt;表名&gt; [ &lt;列名1&gt; [ , … &lt;列名n&gt;] ]</span><br><span class="line">VALUES (值1) [… , (值n) ];</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://haxtedy.github.io/2019/09/09/job-interview/" data-id="ck0euqeze0005v8maxv0w0ig6" class="article-share-link">Share</a>
+      <a data-url="https://haxtedy.github.io/2019/09/23/mysql/" data-id="ck1lg5c4m000inkma9h6r7an7" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/career/">career</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
 
     </footer>
   </div>
@@ -145,10 +114,10 @@
 
 
   
-    <article id="post-BFC" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-华为" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/09/05/BFC/" class="article-date">
-  <time datetime="2019-09-05T08:36:41.000Z" itemprop="datePublished">2019-09-05</time>
+    <a href="/2019/09/23/华为/" class="article-date">
+  <time datetime="2019-09-23T03:22:53.000Z" itemprop="datePublished">2019-09-23</time>
 </a>
     
   </div>
@@ -159,7 +128,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/05/BFC/">BFC</a>
+      <a class="article-title" href="/2019/09/23/华为/">华为</a>
     </h1>
   
 
@@ -171,10 +140,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://haxtedy.github.io/2019/09/05/BFC/" data-id="ck0euqez60001v8maz38fym5w" class="article-share-link">Share</a>
+      <a data-url="https://haxtedy.github.io/2019/09/23/华为/" data-id="ck1lg5c5l0012nkmajpqyw6px" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/career/">career</a></li></ul>
 
     </footer>
   </div>
@@ -187,7 +156,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -201,7 +170,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/career/">career</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端综合知识点/">前端综合知识点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/career/">career</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端综合知识点/">前端综合知识点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li></ul>
     </div>
   </div>
 
@@ -211,7 +180,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/career/" style="font-size: 15px;">career</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/前端综合知识点/" style="font-size: 10px;">前端综合知识点</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/网络/" style="font-size: 15px;">网络</a>
+      <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/career/" style="font-size: 20px;">career</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/前端综合知识点/" style="font-size: 10px;">前端综合知识点</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/网络/" style="font-size: 15px;">网络</a>
     </div>
   </div>
 
@@ -233,7 +202,15 @@
       <ul>
         
           <li>
-            <a href="/2019/09/09/job-interview/">job_interview</a>
+            <a href="/2019/09/23/mysql/">mysql</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/23/华为/">华为</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/09/小米/">job_interview</a>
           </li>
         
           <li>
@@ -242,14 +219,6 @@
         
           <li>
             <a href="/2019/08/19/流式布局和响应式布局/">布局</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/19/TCP-IP/">TCP-IP</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/12/pt-px/">pt_px</a>
           </li>
         
       </ul>

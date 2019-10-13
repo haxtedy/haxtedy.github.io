@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-markdown-use" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-前端的一些面试点" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/22/markdown-use/" class="article-date">
-  <time datetime="2019-07-22T05:40:27.000Z" itemprop="datePublished">2019-07-22</time>
+    <a href="/2019/07/30/前端的一些面试点/" class="article-date">
+  <time datetime="2019-07-30T00:49:27.000Z" itemprop="datePublished">2019-07-30</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/22/markdown-use/">markdown_use</a>
+      <a class="article-title" href="/2019/07/30/前端的一些面试点/">前端的一些面试点</a>
     </h1>
   
 
@@ -86,45 +86,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="标题："><a href="#标题：" class="headerlink" title="标题："></a>标题：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
-
-<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*斜体文本*</span><br><span class="line">_斜体文本_</span><br><span class="line">**粗体文本**</span><br><span class="line">__粗体文本__</span><br><span class="line">***粗斜体文本***</span><br><span class="line">___粗斜体文本___</span><br></pre></td></tr></table></figure>
-
-<h3 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">***</span><br></pre></td></tr></table></figure>
-
-<h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~ BAIDU.COM ~~</span><br></pre></td></tr></table></figure>
-
-<h3 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h3><p>通过 HTML 的 <strong><u></u></strong> 标签来实现:</p>
-<p><u>例子</u></p>
-<h3 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[^要注明的文本]</span><br></pre></td></tr></table></figure>
-
-<p>创建脚注格式类似这样 [^RUNOOB]。</p>
-<p>[^RUNOOB]: 菜鸟教程 – 学的不仅是技术，更是梦想！！！</p>
-<h3 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h3><p>Markdown 区块引用是在段落开头使用 <code>&gt;</code> 符号 ，然后后面紧跟一个<strong>空格</strong>符号。</p>
-<p>区块是可以<strong>嵌套</strong>的，一个 <code>&gt;</code> 符号是最外层，两个 <code>&gt;</code> 符号是第一层嵌套。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ul>
-<li>如果是段落上的一个函数或片段的代码可以用反引号把它包起来（<strong>`</strong>）。</li>
-<li>代码区块可以用 <strong>```</strong> 包裹一段代码</li>
+        <h4 id="1-输入完网址按下回车，到看到网页这个过程中发生了什么？"><a href="#1-输入完网址按下回车，到看到网页这个过程中发生了什么？" class="headerlink" title="1.输入完网址按下回车，到看到网页这个过程中发生了什么？"></a>1.输入完网址按下回车，到看到网页这个过程中发生了什么？</h4><ul>
+<li>域名解析：DNS（Domain Name Server，域名服务器）将域名解析为对应的IP地址。</li>
+<li>发起TCP的3次握手，建立客户端与服务器的连接。</li>
+<li>客户端发起http请求。</li>
+<li>服务器响应http请求，返回请求页面的html代码。</li>
+<li>浏览器得到html代码后，解析html代码，并请求html代码中的资源。</li>
+<li>服务器再次返回请求资源。</li>
+<li>浏览器得到所需的所有资源，对页面进行渲染，呈现给用户。</li>
 </ul>
-<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[链接名称](链接地址)</span><br></pre></td></tr></table></figure>
-
-<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![alt 属性文本](图片地址)</span><br><span class="line">&lt;img src = &quot;/img/手机英寸.jpg&quot; width=50%/&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|  表头   | 表头  |</span><br><span class="line">|  ----  | ----  |</span><br><span class="line">| 单元格  | 单元格 |</span><br><span class="line">| 单元格  | 单元格 |</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>-:</strong> 设置内容和标题栏居右对齐。</li>
-<li><strong>:-</strong> 设置内容和标题栏居左对齐。</li>
-<li><strong>:-:</strong> 设置内容和标题栏居中对齐。</li>
+<h4 id="2-浏览器渲染页面的过程"><a href="#2-浏览器渲染页面的过程" class="headerlink" title="2.浏览器渲染页面的过程"></a>2.浏览器渲染页面的过程</h4><ul>
+<li></li>
 </ul>
+<h4 id="3-Get与Post的区别"><a href="#3-Get与Post的区别" class="headerlink" title="3.Get与Post的区别"></a>3.Get与Post的区别</h4><ul>
+<li>get重点在从服务器上获取资源；post重点在向服务器发送数据；</li>
+<li>get传输数据是通过URL请求，以field（字段）= value的形式，置于URL后，并用”?”连接，多个请求数据间用”&amp;”连接，如<a href="http://127.0.0.1/Test/login.action?name=admin&amp;password=admin，这个过程用户是可见的；" target="_blank" rel="noopener">http://127.0.0.1/Test/login.action?name=admin&amp;password=admin，这个过程用户是可见的；</a> post传输数据通过Http的post机制，将字段与对应值封存在请求实体中发送给服务器，这个过程对用户是不可见的；</li>
+<li>Get传输的数据量小，因为受URL长度限制，但效率较高；Post可以传输大量数据，所以上传文件时只能用Post方式；</li>
+<li>get是不安全的，因为URL是可见的，可能会泄露私密信息，如密码等； post较get安全性较高；</li>
+<li>get方式只能支持ASCII字符，向服务器传的中文字符可能会乱码。post支持标准字符集，可以正确传递中文字符。</li>
+</ul>
+<h4 id="4-浏览器的缓存机制"><a href="#4-浏览器的缓存机制" class="headerlink" title="4.浏览器的缓存机制"></a>4.浏览器的缓存机制</h4><p>参考：<a href="https://www.jianshu.com/p/54cc04190252" target="_blank" rel="noopener">https://www.jianshu.com/p/54cc04190252</a></p>
+<p><strong>缓存机制：</strong>判断本地缓存是否过期，如果没有过期，直接使用，否则使用协商缓存。</p>
+<p><strong>强缓存</strong>：强缓存生效返回200，与协商缓存失效的返回一样，但是它来自于<strong>from disk cache或from memory cache</strong></p>
+<p>Expires(http/1.0)：判断缓存是否过期。缺陷：存的是服务器端的时间，与客户端时间有出入。</p>
+<p>Cache-Control(http/1.1)：包含很多指令，比如max-age;no-cache;no-store等。max-age中保存的是持续时间而不是时间点，这是优于Expires的地方。</p>
+<p><strong>协商缓存</strong>：向服务器发送请求，判断本地缓存是否被更新过，没有就直接使用本地缓存，更新了，服务器需要发送新的内容。</p>
+<p>Last-Modified 和If-Modified-Since：根据时间的改动。Last-Modified服务器发送给客户端，资源内容最后被更新的时间，会保存在本地缓存中。浏览器发送请求时，会附带If-Modified-Since，也就是本地缓存之前保存的Last-Modified，如果服务器端的Last-Modified和If-Modified-Since相等，说明没有更改，可以直接使用本地缓存，返回304；否则返回200，并且发送新的内容。缺陷：只能以秒计时，另外本地打开缓存文件，会修改Last-Modified。</p>
+<p>ETag和If-None-Match：根据内容的改动。ETag是资源内容的一个唯一标识，由服务器计算产生，当资源发生变化，ETag就会重新生成。服务器发送给浏览器资源及其ETag。当浏览器发送请求时，会将ETag放到If-None-Match中，如果If-None-Match和服务器端的ETag匹配上了，就返回304，否则返回200，并且发送新的内容。</p>
+<p><img src="/img/1.png" alt></p>
+<p>Ctrl+F5强制刷新</p>
+<p>Ctrl+shift+del 删除缓存</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://haxtedy.github.io/2019/07/22/markdown-use/" data-id="ck0euqf0x0013v8ma5ezzbxc4" class="article-share-link">Share</a>
+      <a data-url="https://haxtedy.github.io/2019/07/30/前端的一些面试点/" data-id="ck1lg5c5f000znkma0jd8v69s" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/career/">career</a></li></ul>
 
     </footer>
   </div>
@@ -133,25 +132,43 @@
 
 
   
-    <article id="post-markdown笔记" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-HTTP-CDN" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/22/markdown笔记/" class="article-date">
-  <time datetime="2019-07-22T03:30:23.978Z" itemprop="datePublished">2019-07-22</time>
+    <a href="/2019/07/29/HTTP-CDN/" class="article-date">
+  <time datetime="2019-07-29T06:17:53.000Z" itemprop="datePublished">2019-07-29</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/29/HTTP-CDN/">HTTP_CDN</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="CDN概述"><a href="#CDN概述" class="headerlink" title="CDN概述"></a>CDN概述</h3><p>CDN的全称是Content Delivery Network，即内容分发网络。CDN是构建在网络之上的内容分发网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。CDN的关键技术主要有内容存储和分发技术。</p>
+<hr>
+<h3 id="CDN的优势："><a href="#CDN的优势：" class="headerlink" title="CDN的优势："></a>CDN的优势：</h3><ul>
+<li>CDN节点解决了跨运营商和跨地域访问的问题，访问延时大大降低；</li>
+<li>大部分请求在CDN边缘节点完成，CDN起到了分流作用，减轻了源站的负载。</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://haxtedy.github.io/2019/07/22/markdown笔记/" data-id="ck0euqeye0000v8mazhtjypx9" class="article-share-link">Share</a>
+      <a data-url="https://haxtedy.github.io/2019/07/29/HTTP-CDN/" data-id="ck1lg5c400002nkmayzlellwj" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络/">网络</a></li></ul>
+
     </footer>
   </div>
   
@@ -163,7 +180,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -177,7 +194,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/career/">career</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端综合知识点/">前端综合知识点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/career/">career</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端综合知识点/">前端综合知识点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li></ul>
     </div>
   </div>
 
@@ -187,7 +204,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/career/" style="font-size: 15px;">career</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/前端综合知识点/" style="font-size: 10px;">前端综合知识点</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/网络/" style="font-size: 15px;">网络</a>
+      <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/career/" style="font-size: 20px;">career</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/前端综合知识点/" style="font-size: 10px;">前端综合知识点</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/网络/" style="font-size: 15px;">网络</a>
     </div>
   </div>
 
@@ -209,7 +226,15 @@
       <ul>
         
           <li>
-            <a href="/2019/09/09/job-interview/">job_interview</a>
+            <a href="/2019/09/23/mysql/">mysql</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/23/华为/">华为</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/09/小米/">job_interview</a>
           </li>
         
           <li>
@@ -218,14 +243,6 @@
         
           <li>
             <a href="/2019/08/19/流式布局和响应式布局/">布局</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/19/TCP-IP/">TCP-IP</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/12/pt-px/">pt_px</a>
           </li>
         
       </ul>
